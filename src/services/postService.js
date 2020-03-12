@@ -11,6 +11,14 @@ class PostService {
   async createPost(body){
     await HTTP.post("/posts", body);
   }
+
+  //SHOW
+  async getSinglePost(id){
+    const response = await HTTP.get(`/posts/${id}`);
+    return response.data;
+  }
+
+
 }
 
 const postService = new PostService();
