@@ -8,6 +8,7 @@
       <input type="text" name="text" v-model="text" class="form-control">
       <button @click.prevent="onSubmit" class="btn btn-success">Submit</button>
     </form>
+    <button @click="reset" class="btn btn-danger">Reset</button>
 
   </div>
 </template>
@@ -30,6 +31,10 @@ export default {
       await postService.createPost(body);
       alert("Uspesno kreiran post");
       this.$router.push('/posts');
+    },
+    reset(){
+      this.title = '';
+      this.text = '';
     }
   }
 }
