@@ -16,7 +16,7 @@
         <td>{{ post.text }}</td>
         <td><router-link :to="`/posts/${post.id}`" class="btn btn-warning">View</router-link></td>
         <td><router-link class="btn btn-info" :to="`/edit/${post.id}`">Edit</router-link></td>
-        <td>For now, empty</td>
+        <td><button @click="deletePost(post.id)" class="btn btn-danger">Delete</button></td>
       </tr>
     </table>
   </div>
@@ -32,7 +32,10 @@ export default {
     }
   },
   methods: {
-
+    deletePost(id){
+      postService.deletePost(id);
+      this.posts = this.posts.filter( post => post.id !== id);
+    }
   },
   async created(){
     this.posts = await postService.getAllPosts();
