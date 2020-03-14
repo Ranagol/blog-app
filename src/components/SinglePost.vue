@@ -1,19 +1,9 @@
 <template>
   <div>
     <h3>SinglePost</h3>
-    <table class="table">
-      <tr>
-        <th>id</th>
-        <th>title</th>
-        <th>text</th>
-      </tr>
-      <tr>
-        <td>{{ post.id }}</td>
-        <td>{{ post.title }}</td>
-        <td>{{ post.text }}</td>
-      </tr>
-    </table>
-  
+    <p>Post id number: {{ post.id }}</p>
+    <p>Post title: {{ post.title }}</p>
+    <p>Post text: {{ post.text }}</p>
   </div>
 </template>
 
@@ -22,7 +12,6 @@ import postService from '../services/postService';
 export default {
   data(){
     return {
-      //id: this.$route.params.id,
       post: ''
     }
   },

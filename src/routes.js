@@ -8,4 +8,5 @@ export const routes = [
   { path: '/posts', name: 'posts', component: Posts },
   { path: '/add', name: 'add', component: AddPost },
   { path: '/posts/:id', name: 'singlePost', component: SinglePost },
+  { path: '/edit/:id', name: 'edit', component: AddPost },
 ]

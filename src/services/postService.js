@@ -18,6 +18,15 @@ class PostService {
     return response.data;
   }
 
+  //EDIT
+  async editPost(body, id) {
+    await HTTP.put(`/posts/${id}`, body);
+  }
+
+  //DELETE
+  async deletePost(id) {
+    await HTTP.delete(`/posts/${id}`);
+}
 
 }
 
