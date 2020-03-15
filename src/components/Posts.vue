@@ -6,6 +6,7 @@
         <th>id</th>
         <th>title</th>
         <th>text</th>
+        <th>Comments</th>
         <th>View</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -14,6 +15,7 @@
         <td>{{ post.id }}</td>
         <td>{{ post.title }}</td>
         <td>{{ post.text }}</td>
+        <td>{{ post.comments.length }}</td>
         <td><router-link :to="`/posts/${post.id}`" class="btn btn-warning">View</router-link></td>
         <td><router-link class="btn btn-info" :to="`/edit/${post.id}`">Edit</router-link></td>
         <td><button @click="deletePost(post.id)" class="btn btn-danger">Delete</button></td>
@@ -39,7 +41,6 @@ export default {
   },
   async created(){
     this.posts = await postService.getAllPosts();
-    console.log(this.cars);
   }
   
 }
