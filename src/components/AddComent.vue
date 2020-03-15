@@ -15,18 +15,17 @@ export default {
   data(){
     return {
       comment: '',
-
     }
   },
   methods: {
     onSubmit(){
       console.log('onSubmit called');
-      this.handleSubmit(this.comment);
+      this.handleSubmit(this.comment);//here we use the handleSubmit from the props, with this.handleSubmit
       this.comment = '';
     }
   },
   props: {
-    handleSubmit: {
+    handleSubmit: {//here we are receiving the function from the parent
       type: Function,
       required: true
     }

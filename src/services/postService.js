@@ -33,7 +33,6 @@ class PostService {
     const response = await HTTP.post(`/posts/${postId}/comments`, { text: comment });
     return response.data
   }
-
 }
 
 const postService = new PostService();
